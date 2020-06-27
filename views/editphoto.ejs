@@ -1,0 +1,49 @@
+<%- include('header.ejs') %>
+
+<div class="home">
+
+    <div class="homeheader box">
+        
+        <h1>Profile</h1>
+
+    </div>
+    
+    <div class="box">
+
+        <div class="homeform">
+
+            <form action="profileimageupdated" method="post" enctype="multipart/form-data">
+                
+                <div class="imagediv">
+                    <label for="profileimageid">
+                        <input type="file" name="profileimage" onchange="loadFile(event)" id="profileimageid">
+                        <img src="/uploads/<%=user.profileimage%>" id="output" alt="user">
+                     </label>
+                </div>
+                <br>
+                <div class="btngrid">
+                    <input type="submit" value="Done">
+                    <input type="submit" value="Cancel" formaction="canceledit" formaction="post">
+                </div>
+                
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+            URL.revokeObjectURL(output.src);
+        }
+    };
+
+</script>
+
+<%- include('footer.ejs') %>

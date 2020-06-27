@@ -1,0 +1,84 @@
+<%- include('header.ejs') %>
+
+<%- include('nav.ejs') %>
+
+<div class="box">
+
+        <% user.profilepost.forEach(function(post){ %>
+
+        <% if(post._id == postid){ %>
+            
+            <div class="dpheader">
+                <img src="/uploads/<%=user.profileimage%>" alt="profileimage">
+                <h1><%=user.profilename%></h1>
+            </div>
+
+            <div class="dpcenter">
+                <img src="/uploads/<%=post.postimage%>" alt="post">
+            </div>
+
+            <div class="dpfooter">
+                <form action="postlike" method="post" id="myForm" style="display: contents;">
+                <% var i=-1 %>
+                <% i = post.postlike.indexOf(currentid) %>
+                
+                <% if(i == -1){ %>
+
+                    <img src="/icon/unlikepost.svg" alt="unlike" id="postimageid">
+
+                <% }else{ %>
+
+                    <img src="/icon/likepost.svg" alt="like" id="postimageid">
+                        
+                <% } %>
+                    
+                <pre><%=post.postlike.length%></pre>
+                
+                    <input type="text" name="postimagedeep" id="postimagedeepid" value="<%=post._id%>" style="display: none;">
+                    <input type="text" name="postimagedeepuser" id="postimagedeepuserid" value="<%=user._id%>" style="display: none;">
+                    
+                </form>
+            </div>
+
+            <div class="dpcomments">
+
+                <% post.postcomments.forEach(function(comment){ %>
+
+                    <h1><%= comment.postcommentid %></h1>
+                    <p><%= comment.postcommentname %></p>
+
+                <% }) %>
+
+            </div>
+
+            <div class="dpcommentinput">
+
+                <form action="commentinput" method="post">
+                    <input type="text" name="commentinput" id="commentinputid" placeholder="Comment" required autocomplete="off">
+                    <input type="text" name="postimagedeep" id="postimagedeepid" value="<%=post._id%>" style="display: none;">
+                    <input type="text" name="postimagedeepuser" id="postimagedeepuserid" value="<%=user._id%>" style="display: none;">
+                    <input type="submit" value="Comment">
+                </form>
+
+            </div>
+
+        <% } %>
+        <% }) %>
+
+
+</div>
+
+<script>
+
+    window.onload=function() {
+        document.getElementById("postimageid").onclick=function() {
+            document.getElementById("myForm").submit();
+            return false;
+        }
+    }
+    
+</script>    
+
+<%- include('socially.ejs') %>
+
+<%- include('footer.ejs') %>

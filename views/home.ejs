@@ -1,0 +1,54 @@
+<%- include('header.ejs') %>
+
+<div class="home">
+
+    <div class="homeheader box">
+        
+        <h1>Profile</h1>
+
+    </div>
+    
+    <div class="box">
+
+        <div class="homeform">
+
+            <form action="profilesubmit" method="post" enctype="multipart/form-data">
+                
+                <div class="imagediv">
+                    <label for="profileimageid">
+                        <input type="file" name="profileimage" onchange="loadFile(event)" id="profileimageid" required>
+                        <img src="/images/empty.png" id="output" alt="user">
+                     </label>
+                </div>
+                <input type="text" name="profilename" id="profilenameid" placeholder="Name" required autocomplete="off"> 
+                <br>
+                <input type="text" name="profilebio" id="profilebioid" placeholder="Bio" required autocomplete="off">
+                <br>
+                <input type="number" name="profileage" id="profileageid" placeholder="Age" required autocomplete="off">
+                <br>
+                <input type="tel" name="profilenumber" id="profilenumberid" placeholder="Phone Number" required autocomplete="off">
+                <br>
+                <br>
+                <input type="submit" value="Done">
+                
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+            URL.revokeObjectURL(output.src);
+        }
+    };
+
+</script>
+
+<%- include('footer.ejs') %>

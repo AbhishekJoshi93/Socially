@@ -1,0 +1,72 @@
+<%- include('header.ejs') %>
+
+<%- include('nav.ejs') %>
+
+<div class="box profile">
+
+    <div class="profilename">
+        <div class="profilenamelock">
+
+            <h1><%=user.profilename%></h1>
+    
+            <% if(user.profiletype == true){%>
+    
+                <pre class="lockdiv"><img src="/icon/password.svg" alt="lock"></pre>
+    
+            <%}%>
+            
+        </div>
+
+        <p>Bio: <%=user.profilebio%></p>
+        <p>Friends: <%=user.profilefriends.length%></p>
+    </div>
+
+    <div class="profileimage">
+        <img src="/uploads/<%=user.profileimage%>" alt="photo">
+    </div>
+
+    <div class="profileedit">
+
+        <form action="profileedit" method="post" class="profileeditgrid">
+
+            <input type="submit" value="Edit Details">
+            <input type="submit" value="Edit Image" formaction="profileeditimage" formaction="post">
+            <input type="submit" value="View Friends" formaction="viewfriendsprofile" formaction="post" class="viewfriendsdiv">
+
+        </form>
+
+    </div>
+
+    <div class="profilepostdiv">
+        <% user.profilepost.reverse() %>
+
+        <% user.profilepost.forEach(function(post){ %>
+
+
+            <img src="/uploads/<%=post.postimage%>" alt="post" id="postimageid" onclick="Letgo()"> 
+
+            <form action="postimagedeep" method="post" id="myForm" style="display: contents;">
+                
+                <input type="text" name="postimagedeep" id="postimagedeepid" value="<%=post._id%>" style="display: none;">
+                <input type="text" name="postimagedeepuser" id="postimagedeepuserid" value="<%=user._id%>" style="display: none;">
+                
+            </form>
+            
+            <% }) %>
+            
+    </div>
+
+</div>
+
+<script>
+    
+function Letgo(){
+    document.getElementById("myForm").submit();
+    return false;   
+}
+
+</script>
+
+<%- include('socially.ejs') %>
+
+<%- include('footer.ejs') %>

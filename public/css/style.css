@@ -1,0 +1,457 @@
+body{
+    border: 0px solid #ffffff;
+    margin: 0% 30%;
+    width: 40vw;
+    background-color: #fafafa;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.box{
+    background-color: #ffffff;
+    border: 1px solid #dfe1e5;
+    margin: 2%;
+    border-radius: 10px;
+}
+
+h1, h3{
+    font-family: 'Caveat', cursive;
+}
+
+.indexpage{
+    margin: 25% 0;
+}
+
+.indexheader{
+    font-size: 150%;
+    text-align: center;
+}
+
+.indexheader img{
+    width: 7%;
+}
+
+.indextext{
+    padding: 5% 0;
+    line-height: 20%;
+    font-size: 125%;
+    padding-left: 25%;
+}
+
+.indexform{
+    padding-left: 30%;
+}
+
+.indexform input[type=submit]{
+    font-size: 150%;
+    margin: 2% 0;
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    border-radius: 5px;
+    padding: 5%;
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+.indexcopy{
+    text-align: center;
+    margin: 5% 0;
+    color: grey;
+}
+
+input:focus, input:active{
+    outline: none;
+}
+
+.home{
+    margin: 15% 0;
+}
+
+.homeheader{
+    text-align: center;
+}
+
+.home input, option{
+    width: 50%;
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    padding: 2%;
+    margin: 2%;
+    margin-left: 25%;
+    border-radius: 10px;
+}
+
+.home input[type=file]{
+    display: none;
+}
+
+.home img{
+    width: 20%;
+    margin-left: 35%;
+    background-color: #ffffff;
+    border: 1px solid #dfe1e5;
+    border-radius: 50%;
+    padding: 5%;
+}
+
+.home .imagediv{
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    padding: 2%;
+    margin: 2%;
+    margin-left: 25%;
+    margin-right: 21%;
+    border-radius: 10px;
+}
+
+.home input[type=submit]{
+    width: 20%;
+    margin-left: 43%;
+}
+
+.home img{
+    cursor: pointer;
+}
+
+.sociallydiv{
+    text-align: center;
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.nav li{
+    list-style: none;
+}
+
+.nav img{
+    padding: 15%;
+    width: 25%;
+}
+
+.searchdiv{
+    padding: 2%;
+}
+
+.searchdiv input[type=text]{
+    width: 75%;
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    padding: 2%;
+    margin: 2%;
+    border-radius: 10px;
+}
+
+.searchdiv input[type=submit]{
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    padding: 2%;
+    width: 15%;
+    border-radius: 10px;
+}
+
+.boxinset{
+    border-radius: 10px;
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+}
+
+.finduserdiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 2% 2%;
+}
+
+.finduserimage img{
+    width: 50%;
+    border-radius: 20px;
+    margin: 5%;
+    margin-left: 25%;
+}
+
+.findusername h3{
+    margin: 0%;
+    font-size: 150%;
+    margin-top: 5%;
+}
+
+.findviewbtn input[type=submit]{
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #dfe1e5;
+    width: 50%;
+    padding: 10%;
+    margin: 15% 0;
+    margin-left: 25%;
+}
+
+.fudiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.fuimgdiv{
+    width: 50%;
+    margin: 5%;
+    margin-top: 10%;
+    margin-left: 15%;
+}
+
+.fudiv img{
+    width: 100%;
+    padding: 20%;
+    border-radius: 50px;
+}
+
+.funame input[type=submit]{
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    border-radius: 10px;
+    width: 95%;
+    padding: 4%;
+    margin: 2% 0;
+}
+
+.fuimagediv{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.notificationimage img{
+    width: 75%;
+    margin: 10%;
+    border-radius: 10%;
+}
+
+.notification{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.notificationbtn{
+    margin: 25% 0;
+}
+
+.notificationbtn input[type=submit]{
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    border-radius: 10px;
+    width: 75%;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+
+.profile{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.profilename{
+    margin: 5%;
+    margin-left: 25%;
+}
+
+.profileimage img{
+    width: 30%;
+    width: 20vh;
+    border-radius: 30px;
+    margin: 5% 40%;
+}
+
+.profileedit{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.profileeditgrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profileedit input[type=submit]{
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    border-radius: 10px;
+    width: 90%;
+    margin: 2% 5%;
+    padding: 2%;
+}
+
+.viewfriendsdiv{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.postimagediv{
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    border-radius: 10px;
+    margin: 2% 10%;
+}
+
+.postimagediv img{
+    width: 75%;
+    padding: 5% 13%;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.postdiv input[type=text]{
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    border-radius: 10px;
+    width: 76%;
+    margin: 2% 10%;
+    padding: 2%;
+}
+
+.postdiv input[type=submit]{
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    border-radius: 10px;
+    width: 80%;
+    margin: 2% 10%;
+    padding: 2%;
+}
+
+.lockdiv img{
+    width: 50%;
+    margin: 20%;
+}
+
+.profilenamelock{
+    display: flex;
+}
+
+.profilepostdiv{
+    margin-left: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.profilepostdivf{
+    margin-left: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.profilepostdiv img{
+    cursor: pointer;
+    width: 75%;
+    height: 25vh;
+    margin: 10%;
+    border-radius: 20px;
+}
+
+.profilepostdivf img{
+    width: 75%;
+    height: 25vh;
+    border-radius: 50px;
+    margin: -8%;
+    cursor: pointer;
+}
+
+.dpheader{
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr;
+    border-bottom: 1px solid #dfe1e5;
+    margin-bottom: 2%;
+}
+
+.dpheader img{
+    width: 50%;
+    margin: 10%;
+    border-radius: 25%;
+}
+
+.dpcenter img{
+    width: 75%;
+    margin: 2% 15%;
+    border-radius: 20px;
+}
+
+.dpfooter img{
+    width: 5%;
+    margin-left: 15%;
+    cursor: pointer;
+}
+
+.dpfooter{
+    display: flex;
+}
+
+.dpfooter pre{
+    margin-left: 2%;
+    font-size: 125%;
+}
+
+.dpcomments{
+    display: inline;
+}
+
+.dpcommentinput{
+    margin: 2% 15%;
+}
+
+.dpcommentinput input[type=text]{
+    width: 100%;
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.dpcommentinput input[type=submit]{
+    width: 105%;
+    margin-top: 2%;
+    background-color: #fafafa;
+    border: 1px solid #dfe1e5;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.dpcomments{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    margin-left: 15%;
+}
+
+.dpcomments p{
+    padding-top: 5%;
+}
+
+.postpublic{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.postpublic img{
+    width: 75%;
+    height: 30vh;
+    border-radius: 20px;
+    margin: 10%;
+}
+
+.mainimg img{
+    margin: 10%;
+    width: 60%;
+    margin-left: 20%;
+}
+
+input[type=submit]{
+    font-family: 'Caveat', cursive;
+    font-size: 125%;
+}

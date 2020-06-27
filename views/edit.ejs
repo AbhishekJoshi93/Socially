@@ -1,0 +1,51 @@
+<%- include('header.ejs') %>
+
+<div class="home">
+
+    <div class="homeheader box">
+        
+        <h1>Profile</h1>
+
+    </div>
+    
+    <div class="box">
+
+        <div class="homeform">
+
+            <form action="profileupdated" method="post" enctype="multipart/form-data">
+                
+                <input type="text" name="profilename" id="profilenameid" value="<%=user.profilename%>" autocomplete="off"> 
+                <br>
+                <input type="text" name="profilebio" id="profilebioid" value="<%=user.profilebio%>" autocomplete="off">
+                <br>
+                <input type="number" name="profileage" id="profileageid" value="<%=user.profileage%>" autocomplete="off">
+                <br>
+                <input type="tel" name="profilenumber" id="profilenumberid" value="<%=user.profilenumber%>" autocomplete="off">
+                <br>
+                <div class="btngrid">
+
+                    <% if(user.profiletype == true){%>
+    
+                        <input type="submit" value="Public" formaction="publicacc" formmethod="post">
+            
+                    <%}else{%>
+
+                        <input type="submit" value="Private" formaction="publicacc" formmethod="post">
+
+                    <%}%>
+
+                    <br>
+                    <input type="submit" value="Done">
+                    <br>
+                    <input type="submit" value="Cancel" formaction="canceledit" formaction="post">
+                </div>
+                
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<%- include('footer.ejs') %>

@@ -1,0 +1,38 @@
+<%- include('header.ejs') %>
+
+<%- include('nav.ejs') %>
+
+<div class="box searchdiv">
+    <form action="searchuser" method="post">
+        <input type="text" name="searchname" id="searchnameid" placeholder="Search" required autocomplete="off">
+        <input type="submit" value="Find">
+    </form>
+</div>
+
+<div class="box">
+
+    <div class="postpublic">
+
+        <% all.forEach(function(every){ %>
+
+            <% if(every.profiletype == false){ %>
+
+                <% every.profilepost.reverse() %>
+
+                <% every.profilepost.forEach(function(post){ %>
+
+                    <img src="/uploads/<%=post.postimage%>" alt="post">
+
+                <% }) %>
+
+            <% } %>
+
+        <% }) %>
+
+    </div>
+
+</div>
+
+<%- include('socially.ejs') %>
+
+<%- include('footer.ejs') %>

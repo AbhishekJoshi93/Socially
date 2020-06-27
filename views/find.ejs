@@ -1,0 +1,40 @@
+<%- include('header.ejs') %>
+
+<%- include('nav.ejs') %>
+
+<div class="box searchdiv">
+    
+    <form action="searchuser" method="post">
+        <input type="text" name="searchname" id="searchnameid" placeholder="Search" required autocomplete="off">
+        <input type="submit" value="Find">
+    </form>
+
+    <div class="finduserdiv boxinset">
+
+        <% users.forEach(function(user){ %>
+            
+            <div class="finduserimage">
+                <img src="/uploads/<%=user.profileimage%>" alt="userimage">
+            </div>
+            <div class="findusername">
+                <h3><%=user.profilename%></h3>
+                <p>Friends <%=user.profilefriends.length%></p>
+            </div>
+            <div class="findviewbtn">
+                
+                <form action="finduser" method="post">
+                    <input type="submit" value="View">
+                    <input type="text" name="finduser" id="finduserid" value="<%=user._id%>" style="display: none;">
+                </form>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+
+</div>
+
+<%- include('socially.ejs') %>
+
+<%- include('footer.ejs') %>

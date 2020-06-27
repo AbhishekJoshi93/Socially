@@ -1,0 +1,51 @@
+<%- include('header.ejs') %>
+
+<div class="indexpage">
+
+    <div class="box indexheader">
+        <h1> <img src="/icon/icon.svg" alt="icon"> Socially</h1>
+    </div>
+
+    <div class="box">
+        
+        <div class="indextext">
+
+            <p>Place where you can do</p>
+            <h3 id="changeText">Post</h3>
+        
+        </div>
+        
+        <div class="indexform">
+            
+            <form action="/auth/google" method="get">
+                <input type="submit" value="Log in with Google">
+            </form>
+            
+        </div>
+
+        <div class="indexcopy">
+
+            © 2020 Socially From Abhishek
+
+        </div>
+
+    </div>
+    
+</div>
+
+<script>
+    var text = ["Messaging", "Story", "Reacting"];
+    var counter = 0;
+    var elem = document.getElementById("changeText");
+    var inst = setInterval(change, 2000);
+
+    function change() {
+    elem.innerHTML = text[counter];
+    counter++;
+    if (counter >= text.length) {
+        counter = 0;
+    }
+    }
+</script>
+
+<%- include('footer.ejs') %>

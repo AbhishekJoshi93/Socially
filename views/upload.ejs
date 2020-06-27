@@ -1,0 +1,41 @@
+<%- include('header.ejs') %>
+
+<%- include('nav.ejs') %>
+
+<div class="box">
+
+    <div class="postdiv">
+
+        <form action="postimage" method="post" enctype="multipart/form-data">
+
+            <div class="postimagediv">
+                <label for="postimageid">
+                    <input type="file" name="postimage" onchange="loadFile(event)" id="postimageid" required style="display: none;">
+                    <img src="/images/empty.png" id="output" alt="user">
+                 </label>
+            </div>
+
+            <input type="text" name="postcomment" id="postcommentid" required autocomplete="off" placeholder="Caption">
+            <input type="submit" value="Post">
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+    var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+            URL.revokeObjectURL(output.src);
+        }
+    };
+
+</script>
+
+<%- include('socially.ejs') %>
+
+<%- include('footer.ejs') %>

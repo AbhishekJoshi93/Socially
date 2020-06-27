@@ -1,0 +1,48 @@
+<%- include('header.ejs') %>
+
+<%- include('nav.ejs') %>
+
+<div class="box notification">
+
+    <% user.profilependingfriends.forEach(function(result){ %>
+
+        <% all.forEach(function(every){ %>
+
+            <% if( every._id.equals(result) ){ %>
+
+            <div class="notificationimage">
+
+                <img src="/uploads/<%=every.profileimage%>" alt="photo">
+
+            </div>
+
+            <div class="notificationname">
+
+                <h1><%=every.profilename%></h1>
+                <p>Bio: <%=every.profilebio%></p>
+                <p>Friends <%=every.profilefriends.length%></p>
+            
+            </div>
+
+            <div class="notificationbtn">
+
+                <form action="/friendaccept" method="post">
+                    <input type="submit" value="Accept">
+                    <input type="submit" value="Reject" formaction="/friendreject" formmethod="post">
+                    <input type="text" name="friendaccept" id="friendacceptid" value="<%=every._id%>" style="display: none;">
+                </form>
+                    
+            </div>
+
+
+            <% } %>
+
+        <% }) %>
+
+    <% }) %>
+
+</div>
+
+<%- include('socially.ejs') %>
+
+<%- include('footer.ejs') %>

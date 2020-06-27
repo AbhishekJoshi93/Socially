@@ -1,0 +1,100 @@
+<%- include('header.ejs') %>
+
+<%- include('nav.ejs') %>
+
+<div class="fudiv box">
+
+    <div class="fuimgdiv">
+        <img src="/uploads/<%=user.profileimage%>" alt="userimage">
+    </div>
+
+    <div class="funame">
+         <h1><%=user.profilename%></h1>
+         <p>Friends <%=user.profilefriends.length%></p>
+         <p>Bio: <%=user.profilebio%></p>
+
+        <% var i = 0%>
+
+        <% current.profilefriends.forEach(function(present){ %>
+
+            <% if( user._id.equals(present) ){ %>
+                    
+                <% i++ %>
+                
+            <% } %>
+
+        <% }) %>
+
+        <% user.profilependingfriends.forEach(function(present){ %>
+
+            <% if( current._id.equals(present) ){ %>
+                    
+                <% i=5 %>
+                
+            <% } %>
+
+        <% }) %>
+
+
+        <% if(i == 0){%>
+
+            <form action="/friendrequest" method="post">
+                <input type="submit" value="Request">
+                <input type="text" name="friendrequest" id="friendrequestid" value="<%=user._id%>" style="display: none;">
+            </form>
+
+        <% }else if(i == 5){ %>
+            
+            <input type="submit" value="Pending">
+        
+        <% }else if(i > 0){ %>
+
+            <form action="/unfriend" method="post">
+                <input type="submit" value="Unfriend">
+                <input type="submit" value="View Friends" formaction="viewfriends" formmethod="post">
+                <input type="text" name="unfriend" id="unfriendid" value="<%=user._id%>" style="display: none;">
+            </form>
+
+        <% } %>
+    
+    </div>
+
+    <% if(i > 0){ %>
+
+        <div class="profilepostdivf">
+        <% user.profilepost.reverse() %>
+
+            <% user.profilepost.forEach(function(post){ %>
+    
+                <img src="/uploads/<%=post.postimage%>" alt="post" id="postimageid">
+    
+                <form action="postimagedeep" method="post" id="myForm" style="display: contents;">
+                    
+                    <input type="text" name="postimagedeep" id="postimagedeepid" value="<%=post._id%>" style="display: none;">
+                    <input type="text" name="postimagedeepuser" id="postimagedeepuserid" value="<%=user._id%>" style="display: none;">
+                    
+                </form>
+                
+                <% }) %>
+                
+        </div>
+    
+
+    <% } %>
+
+</div>
+
+<script>
+
+    window.onload=function() {
+        document.getElementById("postimageid").onclick=function() {
+            document.getElementById("myForm").submit();
+            return false;
+        }
+    }
+    
+</script>    
+
+<%- include('socially.ejs') %>
+
+<%- include('footer.ejs') %>
