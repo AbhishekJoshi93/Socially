@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "Social App",
   "main": "index.js",
-  "engines": {
-    "node": "12.16.2",
-    "npm": "6.14.4"
+  "scripts": {
+    "start": "node index.js"
   },
   "author": "Abhi",
   "license": "ISC",
-  "scripts": {
-    "start": "node index.js"
+  "engines": {
+    "node": "12.16.2",
+    "npm": "6.14.4"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
