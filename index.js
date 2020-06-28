@@ -80,7 +80,7 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
-app.get("/",(req,res)=>{
+app.get("*",(req,res)=>{
     res.render(__dirname + "/views/index.ejs");
 });
 
