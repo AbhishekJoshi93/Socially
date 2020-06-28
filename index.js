@@ -84,7 +84,7 @@ app.get("/",(req,res)=>{
 passport.use(new googlestrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://sociallywebapp.herokuapp.com//auth/google/socially"
+    callbackURL: "https://sociallywebapp.herokuapp.com//auth/google/socially"
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({ googleId: profile.id,username: profile.displayName }, function (err, user) {
