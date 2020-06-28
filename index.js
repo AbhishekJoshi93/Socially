@@ -14,14 +14,10 @@ const path = require('path');
 
 const app = express();
 
-var server = require('http').createServer(app);
-
 app.use(express.static(__dirname + "/public"));
 app.set("view engine","ejs");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
-require('events').EventEmitter.prototype._maxListeners = 0;
 
 app.use(fileupload());
 
@@ -560,6 +556,6 @@ if(port == null || port == ""){
     port = 3000;
 }
 
-server.listen(port, () => {
+app.listen(port, () => {
     console.log("Website is running");
 });
