@@ -41,7 +41,7 @@ h1, h3{
 }
 
 .indexform{
-    padding-left: 27%;
+    padding-left: 33%;
 }
 
 .indexform input[type=submit]{
@@ -461,4 +461,7 @@ input[type=submit]{
         margin: 0 10%;
         width: 80vw;
     }
-  }
+    .indexform{
+        padding-left: 28%;
+    }
+}
